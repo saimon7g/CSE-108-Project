@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #000833;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxmlController.HomePage">
+   <children>
+      <Label fx:id="clubNameLabel" alignment="CENTER" prefHeight="109.0" prefWidth="900.0" style="-fx-background-color: #8000ff;" stylesheets="@Style.css" text="CLUB NAME" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Franklin Gothic Demi Italic" size="63.0" />
+         </font>
+      </Label>
+      <Pane fx:id="pane1" layoutY="110.0" prefHeight="592.0" prefWidth="188.0" style="-fx-background-color: #eeeeee;" stylesheets="@Style.css">
+         <children>
+            <MenuButton fx:id="searchoptions" layoutX="24.0" layoutY="129.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="141.0" text="Search Options">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#SearchbyName" text="By Name" />
+                <MenuItem mnemonicParsing="false" onAction="#SearchbyCountry" text="By Country" />
+                  <MenuItem mnemonicParsing="false" onAction="#SearchbyPosition" text="By Position" />
+                  <MenuItem mnemonicParsing="false" onAction="#SearchbySalaryRange" text="By Salary Range" />
+              </items>
+            </MenuButton>
+            <MenuButton fx:id="clubstats" layoutX="24.0" layoutY="220.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" text="Club Stats">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#PlayerWithMaxAge" text="Player With Max Age" />
+                  <MenuItem mnemonicParsing="false" onAction="#PlayerWithMaxheight" text="Player with Max Height" />
+                  <MenuItem mnemonicParsing="false" onAction="#PlayerWithMaxSalary" text="Player With Max Salary" />
+                  <MenuItem mnemonicParsing="false" onAction="#CountrywisePlayer" text="Country-wise Player Count" />
+                  <MenuItem mnemonicParsing="false" onAction="#AllPlayersOfClub" text="All Players of Club" />
+                  <MenuItem mnemonicParsing="false" onAction="#TotalClubSalary" text="Total Yearly Salary" />
+               </items>
+            </MenuButton>
+            <MenuButton fx:id="transferwindow" layoutX="24.0" layoutY="305.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="141.0" text="Transfer Window">
+               <items>
+                  <MenuItem fx:id="buyplayer" mnemonicParsing="false" onAction="#buyPlayer" text="Buy Player" />
+                  <MenuItem fx:id="saleplayer" mnemonicParsing="false" onAction="#sellPlayer" text="Sell Player" />
+               </items>
+            </MenuButton>
+            <Button fx:id="logout" layoutX="23.0" layoutY="481.0" mnemonicParsing="false" onAction="#logOut" prefHeight="52.0" prefWidth="142.0" stylesheets="@Style.css" text="Log Out" />
+            <Button layoutX="23.0" layoutY="395.0" mnemonicParsing="false" onAction="#about" prefHeight="52.0" prefWidth="142.0" stylesheets="@Style.css" text="Credits" />
+            <Button fx:id="home" layoutX="23.0" layoutY="34.0" mnemonicParsing="false" onAction="#homePressed" prefHeight="52.0" prefWidth="142.0" stylesheets="@Style.css" text="HOME" />
+         </children>
+      </Pane>
+      <ScrollPane fx:id="scrollPane" layoutX="187.0" layoutY="225.0" prefHeight="476.0" prefWidth="714.0" style="-fx-background-color: #1d2124;" stylesheets="@Style.css" visible="false">
+         <content>
+            <GridPane fx:id="grid" gridLinesVisible="true" prefHeight="27.0" prefWidth="52.0">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content></ScrollPane>
+      <TextField fx:id="box1" layoutX="450.0" layoutY="117.0" onAction="#SearchPressed" prefHeight="46.0" prefWidth="318.0" promptText="Type Here" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text fx:id="text1" fill="WHITE" layoutX="202.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" visible="false" wrappingWidth="240.51821899414062">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="box2" layoutX="450.0" layoutY="172.0" prefHeight="46.0" prefWidth="318.0" promptText="Type Here" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text fx:id="text2" fill="WHITE" layoutX="202.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" visible="false" wrappingWidth="240.51821899414062">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="searchButton" layoutX="790.0" layoutY="155.0" mnemonicParsing="false" onAction="#SearchPressed" prefHeight="33.0" prefWidth="95.0" text="Search" visible="false" />
+      <Pane fx:id="pane2" layoutX="187.0" layoutY="110.0" prefHeight="592.0" prefWidth="714.0" visible="false">
+         <children>
+            <Text fx:id="salaryText" fill="WHITE" layoutX="72.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="586.9367980957031">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <ListView fx:id="list" layoutX="-1.0" layoutY="87.0" prefHeight="504.0" prefWidth="714.0" />
+         </children>
+      </Pane>
+      <Text fx:id="welcomeText" fill="WHITE" layoutX="187.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="714.0000000000002">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,200 @@
+# Setup and Running Guide
+
+## Prerequisites
+1. Java Development Kit (JDK) 8 or higher
+2. JavaFX SDK
+3. Any Java IDE (IntelliJ IDEA, Eclipse, or NetBeans)
+4. Git (optional, for cloning)
+
+## Project Setup
+
+### 1. File Structure
+Create the following directory structure:
+```
+FootballTransferMarket/
+├── src/
+│   ├── fxmlController/
+│   │   ├── LogIn.fxml
+│   │   ├── HomePage.fxml
+│   │   ├── BuyPlayer.fxml
+│   │   ├── SellPlayer.fxml
+│   │   ├── ShowPlayer.fxml
+│   │   └── About.fxml
+│   ├── Images/
+│   │   └── PremierLeagueLogo.jpg
+│   ├── sample/
+│   │   ├── Client.java
+│   │   ├── Club.java
+│   │   ├── Main.java
+│   │   ├── Player.java
+│   │   └── ReadThreadClient.java
+│   ├── Server/
+│   │   ├── FileOperation.java
+│   │   ├── ReadThreadServer.java
+│   │   └── Server.java
+│   └── Util/
+│       ├── Message.java
+│       └── NetworkUtil.java
+├── in.txt  // Player data file
+└── README.md
+```
+
+### 2. Setup Player Data
+Create `in.txt` in the project root with sample player data:
+```
+Name,Country,Age,Height,ClubName,Position,Number,Salary
+John Doe,England,25,1.85,Arsenal,Forward,10,100000
+...
+```
+
+### 3. IDE Setup
+Using IntelliJ IDEA (recommended):
+1. Open IntelliJ IDEA
+2. Go to File → New → Project from Existing Sources
+3. Select the project directory
+4. Choose "Create project from existing sources"
+5. Follow the wizard to complete setup
+
+## Running the Application
+
+### 1. Start the Server
+1. Navigate to `Server.java`
+2. Run the main method
+3. Server will start on port 7777
+4. You should see: "Server is running..."
+
+### 2. Start the Client
+1. Navigate to `Main.java`
+2. Run the main method
+3. The login window will appear
+
+### 3. Login Credentials
+Use these pre-configured club credentials:
+```
+Club: Arsenal       Password: arsenal
+Club: Chelsea       Password: chelsea
+Club: Liverpool     Password: liverpool
+Club: Manchester United  Password: manu
+Club: Manchester City    Password: mancity
+```
+
+## Troubleshooting
+
+### Common Issues and Solutions
+
+1. **Connection Refused**
+```
+Solution:
+- Ensure server is running
+- Check if port 7777 is free
+- Verify firewall settings
+```
+
+2. **JavaFX Runtime Components Missing**
+```
+Solution:
+Add VM options in Run Configuration:
+--module-path "[path-to-javafx-sdk]/lib" --add-modules javafx.controls,javafx.fxml
+```
+
+3. **File Not Found**
+```
+Solution:
+- Verify 'in.txt' exists in project root
+- Check file permissions
+- Ensure correct file path in FileOperation.java
+```
+
+### Network Configuration
+- Server runs on localhost (127.0.0.1)
+- Port: 7777
+- Ensure port is not blocked by firewall
+
+## Testing the System
+
+1. **Basic Test Flow**
+```
+1. Start Server
+2. Launch Client
+3. Log in as Arsenal
+4. View player roster
+5. List player for sale
+6. Launch second client as Chelsea
+7. View transfer market
+8. Try buying player
+```
+
+2. **Feature Testing**
+- Search players
+- View statistics
+- Set transfer prices
+- Buy/Sell players
+- View country-wise statistics
+
+## Development Mode
+
+### Debug Output
+Add these VM options for detailed logging:
+```
+-Djavafx.verbose=true
+-Djava.util.logging.config.file=logging.properties
+```
+
+### Hot Reload (Optional)
+For faster development:
+1. Use JRebel or similar tools
+2. Enable auto-build in IDE
+3. Use debug mode for better tracking
+
+## Production Deployment
+
+1. **Create JAR**
+```bash
+# Using Maven
+mvn clean package
+
+# Using Gradle
+gradle build
+```
+
+2. **Run Application**
+```bash
+# Start Server
+java -jar server.jar
+
+# Start Client
+java -jar client.jar
+```
+
+## System Requirements
+
+### Minimum Requirements
+- Java 8 or higher
+- 2GB RAM
+- 100MB disk space
+- Network connection
+
+### Recommended
+- Java 11 or higher
+- 4GB RAM
+- 500MB disk space
+- Stable network connection
+
+## Additional Notes
+
+1. **Multiple Instances**
+- Can run multiple clients simultaneously
+- Single server instance only
+- Each club can login once
+
+2. **Data Persistence**
+- Player data stored in `in.txt`
+- Changes saved automatically
+- Backup `in.txt` before testing
+
+3. **Network Usage**
+- Local network traffic only
+- Low bandwidth requirements
+- Real-time updates
+
+Need help with any specific part of the setup?

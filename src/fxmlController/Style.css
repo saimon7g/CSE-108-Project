@@ -1,0 +1,115 @@
+
+
+#login{
+    -fx-text-fill : #000000 ;
+    -fx-font-size : 20px;
+    -fx-background-radius : 25px;
+    -fx-background-color : #22cc00;
+}
+
+#login:hover{
+    -fx-text-fill : #000000 ;
+    -fx-font-size : 20px;
+    -fx-background-radius : 25px;
+    -fx-background-color : #0000e6;
+}
+
+#clubNameLabel{
+
+
+}
+
+#searchButton{
+
+    -fx-text-fill : #000000;
+    -fx-font-size : 20px;
+    -fx-background-radius : 20px;
+     -fx-background-color : #22cc00;
+}
+
+#searchButton: hover{
+
+    -fx-text-fill : #000000;
+    -fx-font-size : 20px;
+    -fx-background-radius : 20px;
+     -fx-background-color : #ff6619 ;
+}
+
+.button
+{
+       -fx-background-color : #9999FF;
+       -fx-border-width: 5px;
+        -fx-background-radius : 15px;
+         -fx-text-fill : #000000;
+            -fx-font-size : 20px;
+}
+
+.button:hover{
+   -fx-background-color : #77dd22; /*#ff6619 ;*/
+   -fx-text-fill : #532D84;
+   -fx-border-width: 0.5;
+    /* -fx-border-color:  */
+}
+
+#searchoptions{
+-fx-background-color : #9999FF;
+       -fx-border-width: 5px;
+        -fx-background-radius : 15px;
+         -fx-text-fill : #000000;
+            -fx-font-size : 14px;
+}
+
+#searchoptions:hover{
+   -fx-background-color :  #77dd22; /*#ff6619 ;*/
+   -fx-text-fill : #000000 ;
+   -fx-border-width: 0.5;
+    /* -fx-border-color:  */
+}
+
+#clubstats{
+-fx-background-color : #9999FF;
+       -fx-border-width: 5px;
+        -fx-background-radius : 15px;
+         -fx-text-fill : #000000;
+            -fx-font-size : 14px;
+
+
+}
+
+#clubstats:hover{
+   -fx-background-color :   #77dd22; /*#ff6619 ;*/
+ -fx-text-fill : #000000 ;
+   -fx-border-width: 0.5;
+    /* -fx-border-color:  */
+}
+
+#transferwindow{
+-fx-background-color : #9999FF;
+       -fx-border-width: 5px;
+        -fx-background-radius : 15px;
+         -fx-text-fill : #000000;
+            -fx-font-size : 13px;
+}
+
+#transferwindow:hover{
+   -fx-background-color :  #77dd22; /*#ff6619 ;*/
+   -fx-text-fill : #000000 ;
+   -fx-border-width: 0.5;
+    /* -fx-border-color:  */
+}
+
+#welcomeText{
+-fx-text-fill : #ffffff ;
+    -fx-font-size : 40px;
+
+}
+#logout:hover{
+-fx-background-color :  #ff002b ;
+ -fx-text-fill : #000000 ;
+   -fx-border-width: 0.5;
+
+
+}
+#imagelogo{
+-fx-background : transparent;
+}
